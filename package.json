@@ -3,7 +3,7 @@
   "description": "Merge Gradle Configuration Files",
   "name": "merge-gradle-conf",
   "main": "dist/index.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "git@github.com:acierto/merge-gradle-conf.git"
