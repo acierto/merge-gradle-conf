@@ -3,7 +3,7 @@
   "description": "Merge Gradle Configuration Files",
   "name": "merge-gradle-conf",
   "main": "dist/index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git@github.com:acierto/merge-gradle-conf.git"
@@ -74,6 +74,7 @@
     "jasmine-reporters": "2.3.2",
     "jasmine-spec-reporter": "4.2.1",
     "jest": "24.9.0",
+    "jest-cli": "25.1.0",
     "js-yaml": "3.13.1",
     "jsdoc": "3.6.3",
     "json-loader": "0.5.7",
