@@ -1,10 +1,12 @@
 import paths from '../../utils/paths';
+import nodeExternals from 'webpack-node-externals';
 
 export default {
     devtool: 'inline-source-map',
     entry: {
         index: ['./app']
     },
+    externals: [nodeExternals()],
     mode: 'development',
     module: {
         rules: [

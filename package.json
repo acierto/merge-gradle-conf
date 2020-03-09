@@ -2,7 +2,7 @@
   "author": "Bogdan Nechyporenko",
   "description": "Merge Gradle Configuration Files",
   "name": "merge-gradle-conf",
-  "main": "dist/index.js",
+  "main": "bin/merge",
   "version": "0.0.5",
   "repository": {
     "type": "git",
@@ -95,6 +95,7 @@
     "rimraf": "3.0.2",
     "strip-sourcemap-loader": "0.0.1",
     "webpack": "4.42.0",
+    "webpack-node-externals": "1.7.2",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {
@@ -148,6 +149,6 @@
     "verbose": true
   },
   "bin": {
-    "merge": "bin/merge.js"
+    "merge": "dist/index"
   }
 }

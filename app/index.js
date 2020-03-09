@@ -13,4 +13,4 @@ import {format} from './format';
     const config = await getConfigPair(currentBranch, comparedToBranch);
     const newConfig = mergeFiles(config.currentBranch, config.comparedToBranch);
     fs.writeFileSync(`${getFullPathToConf()}`, format(newConfig));
-})().catch((err) => log.error(err.message));
+})().catch((err) => log.error(err.message ? err.message : err));

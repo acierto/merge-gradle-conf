@@ -1,3 +1,3 @@
 import gulp from 'gulp';
 
-gulp.task('default', gulp.parallel('build-dist'));
+gulp.task('default', gulp.series('clean', 'build-dist'));
