@@ -149,6 +149,6 @@
     "verbose": true
   },
   "bin": {
-    "merge": "bin/merge"
+    "merge": "bin/merge.js"
   }
 }
