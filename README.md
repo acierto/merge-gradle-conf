@@ -75,7 +75,7 @@ dependencyManagement {
 }
 ```
 
-As merge is finished, `gradle/dependencies.conf` is going to be overwritten with a merged content in the 
-branch specified with `--currentBranch` parameter. 
+As merge is finished, `gradle/dependencies.conf` is going to be overwritten with a merged content in 
+provided working directory (by default this this a current folder). 
 
 Committing and pushing of the final merge has to be performed by a user.  
