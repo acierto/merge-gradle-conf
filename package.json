@@ -92,6 +92,7 @@
     "q": "1.5.1",
     "require-dir": "1.2.0",
     "rimraf": "3.0.2",
+    "shelljs": "^0.8.3",
     "strip-sourcemap-loader": "0.0.1",
     "webpack": "4.42.0",
     "webpack-stream": "5.2.1",
@@ -146,6 +147,6 @@
     "verbose": true
   },
   "bin": {
-    "merge": "./dist/index.js"
+    "merge": "bin/merge.js"
   }
 }
