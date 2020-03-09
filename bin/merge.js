@@ -9,4 +9,4 @@ const shell = require('shelljs');
 shell.exec(R.reduce((acc, argName) => {
     const argValue = args.argv[argName];
     return argValue ? `${acc} --${argName}=${argValue}` : acc;
-}, `node ${projectDir}/dist/index.js`, ['comparedToBranch', 'currentBranch']));
+}, `node ${projectDir}/dist/index.js`, ['comparedToBranch', 'currentBranch', 'workDir']));
