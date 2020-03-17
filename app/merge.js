@@ -1,26 +1,40 @@
 import R from 'ramda';
 import semver from 'semver';
-import {parseFile} from './parse';
+import parseHocon from 'hocon-parser';
+
+const path = ['dependencyManagement', 'versions'];
+
+const toKeys = (json) => R.pipe(
+    R.path(path),
+    R.keys
+)(json);
 
 export const mergeFiles = (file1, file2) => {
-    const json1 = parseFile(file1);
-    const json2 = parseFile(file2);
+    const json1 = parseHocon(file1);
+    const json2 = parseHocon(file2);
 
     const uniqueKeys =
         R.pipe(
             R.uniq,
             R.sort(R.ascend(R.toLower))
-        )(R.concat(R.keys(json1), R.keys(json2)));
+        )(R.concat(toKeys(json1), toKeys(json2)));
 
-    return R.reduce((acc, key) => {
-        if (!R.has(key, json1)) {
-            return {...acc, [key]: json2[key]};
+    const mergedVersions = R.reduce((acc, key) => {
+        const keyPath = [...path, key];
+
+        const json1Key = R.path(keyPath, json1);
+        const json2Key = R.path(keyPath, json2);
+
+        if (!R.hasPath(keyPath, json1)) {
+            return {...acc, [key]: json2Key};
         }
-        if (!R.has(key, json2)) {
-            return {...acc, [key]: json1[key]};
+        if (!R.hasPath(keyPath, json2)) {
+            return {...acc, [key]: json1Key};
         }
 
-        return semver.gt(json1[key], json2[key]) ?
-            {...acc, [key]: json1[key]} : {...acc, [key]: json2[key]};
+        return semver.gt(json1Key, json2Key) ?
+            {...acc, [key]: json1Key} : {...acc, [key]: json2Key};
     }, {}, uniqueKeys);
+
+    return R.assocPath(path, mergedVersions, json1);
 };
