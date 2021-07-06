@@ -9,8 +9,8 @@ describe('Merge', () => {
                 dependencies: ['plugins:some-plugin:$versionOne', 'plugins:another-plugin:$versionTwo'],
                 versions: {
                     abcPlugin: '1.1.1',
-                    myBestPluginVersion: '6.0.0',
                     greenFieldPluginVersion: '0.0.1-alpha.109',
+                    myBestPluginVersion: '6.0.0',
                     somePluginVersion: '0.0.2',
                     specificPlugin: '3.0.2'
                 }
