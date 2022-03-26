@@ -81,7 +81,7 @@
     "json-loader": "0.5.7",
     "lodash.mergewith": "4.6.2",
     "loglevel-colored-level-prefix": "1.0.0",
-    "minimist": "1.2.5",
+    "minimist": "1.2.6",
     "mixin-deep": "2.0.1",
     "mocha": "7.1.0",
     "net": "1.0.2",
